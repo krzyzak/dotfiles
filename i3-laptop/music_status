@@ -1,0 +1,30 @@
+#!/bin/bash
+
+playIcon="";
+pauseIcon=" ⏸️";
+stopIcon=" ⏹️";
+
+playerStatus=$(playerctl $ARGUMENTS status 2> /dev/null);
+RESULT=$?
+if [ $RESULT -eq 1 ]; then
+	echo $stopIcon;
+	exit;
+fi
+songArtist="$(playerctl $ARGUMENTS metadata artist)";
+songArtist="${songArtist:-(Unknown Artist)}";
+songTitle=$(playerctl $ARGUMENTS metadata title);
+songInfo="$songArtist - $songTitle";
+songDuration="";
+elapsedTime=$(playerctl metadata --format "{{ duration(position) }}");
+songLength=$(playerctl metadata --format "{{ duration(mpris:length) }}");
+
+#Display output
+if [[ "${playerStatus^}" = "No players found" ]]; then
+	echo "";
+elif [[ "${playerStatus^}" = "Paused" ]]; then
+	echo "$pauseIcon $songInfo$songDuration";
+elif [[ "${playerStatus^}" = "Playing" ]]; then
+	echo "$playIcon $songInfo$songDuration";
+elif [[ "${playerStatus^}" = "Stopped" ]]; then
+	echo "$stopIcon";
+fi
