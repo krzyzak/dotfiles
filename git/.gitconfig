@@ -1,0 +1,26 @@
+[branch]
+	autosetuprebase = always
+[rebase]
+	autosquash = true
+[core]
+	editor = code --wait
+[push]
+	default = simple
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[user]
+	name = Michal Krzyzanowski
+	email = michal.krzyzanowski@gmail.com
+[diff]
+    tool = kitty
+    guitool = kitty.gui
+[difftool]
+    prompt = false
+    trustExitCode = true
+[difftool "kitty"]
+    cmd = kitty +kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
