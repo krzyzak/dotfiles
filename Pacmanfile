@@ -8,8 +8,9 @@ nvm
 playerctl
 rsync
 speedtest-cli
-spotify
-stow
 thunar-archive-plugin
+ttf-dejavu
+ttf-droid
+ttf-fira-code
+ttf-font-awesome
 veracrypt
-yay
