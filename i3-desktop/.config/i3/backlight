@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ $1 = "inc" ]; then
+  $(xbacklight -inc 20);
+else
+  $(xbacklight -dec 20);
+fi
+brightness=$(xbacklight -get);
+# echo $brightness;
+# echo ${brightness%.*}
+bar=$(seq -s "─" $((${brightness%.*} / 5)) | sed 's/[0-9]//g')
+# notify-send  "Brightness" $bar -h int:value:$brightness -h string:synchronous:brightness
+# notify-send -i "br-low" "Brightness" -h int:value:$brightness -h string:synchronous:brightness
+echo $(dunstify -i display-brightness -t 8 -u normal -r 123123123 "Brightness" "$bar" -h int:value:$brightness -p -h string:x-canonical-private-synchronous:brightness)
