@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Update pacman mirrors, update system
+sudo pacman-mirrors -f5 && sudo pacman -Syyu
+
+# Install packages
+
+sudo pacman -S $(cat Pacmanfile)
+yay -S $(cat Aurfile)
+
+# Install host-specific packages
+
+pacmanfile="Pacmanfile."`hostname`
+aurfile="Aurfile."`hostname`
+
+if [ -f $pacmanfile ]; then
+  sudo pacman -S $(cat $pacmanfile)
+fi
+
+if [ -f $aurfile ]; then
+  yay -S $(cat $aurfile)
+fi
+
+# Remove default xfce4 configuration
+
+sudo rm -rf /etc/xdg/xfce4/panel
+sudo rm -rf /etc/xdg/xfce4/xfconf
