@@ -2,4 +2,13 @@ pgtap-git
 slack-desktop
 spotify
 ttf-jetbrains-mono-git
+xfce4-datetime-plugin
+xfce4-fsguard-plugin
+xfce4-i3-workspaces-plugin-git
+xfce4-netload-plugin
+xfce4-genmon-plugin
+xfce4-systemload-plugin
+xfce4-weather-plugin
+xfce4-statusnotifier-plugin
+xfce4-notifyd
 zoom
