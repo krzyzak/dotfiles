@@ -1,0 +1,23 @@
+[G0]
+timername=Interview
+time=3600
+timercommand=
+timerinfo=1h 0m 0s
+is_countdown=true
+
+[G1]
+timername=Pomodoro
+time=1680
+timercommand=
+timerinfo=28m 0s
+is_countdown=true
+
+[others]
+nowin_if_alarm=false
+selecting_starts=false
+use_global_command=false
+global_command=
+repeat_alarm=false
+repetitions=1
+repeat_interval=10
+
