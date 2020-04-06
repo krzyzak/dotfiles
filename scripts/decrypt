@@ -7,7 +7,10 @@ for f in $(find vault/ -type f -name '*.enc' ! -name 'index.enc'); do
   index=$(cat vault/index);
   hash=${base/.enc/""};
   filename=$(cat vault/index | grep $hash | cut -f2 -d ' ');
+  directory=$(dirname $filename);
 
+  mkdir -p private/$directory;
   keybase pgp decrypt -i $f -o private/$filename;
 done
+
 rm vault/index;
