@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# find private/ -type f ! -name '*.enc' -exec sh -c 'sum=(sha1sum $0 | cut -f1 -d " "); echo $sum' {} \;
+
+# find private/ -type f ! -name '*.enc' -exec bash -c 'sum=sha1sum $0 | cut -f1 -d " "; keybase pgp encrypt -i $0 -o ${0}.enc' {} \;
+# find private/ -type f -name "*.enc" -exec sh -c 'mv $0 vault/' {} \;
+
+truncate -s 0 private/index;
+
+for f in $(find private/ -type f ! -name '*.enc' ! -name 'index'); do
+  # echo $f;
+  fullsum=$(sha1sum "$f");
+  hash=$(echo $fullsum | cut -f1 -d " ");
+
+  echo ${fullsum/private\//""} >> private/index;
+
+  keybase pgp encrypt -i $f -o vault/$hash.enc;
+done
+
+keybase pgp encrypt -i private/index -o vault/index.enc;
+truncate -s 0 private/index;

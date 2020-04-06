@@ -1,0 +1,13 @@
+#!/bin/bash
+
+keybase pgp decrypt -i vault/index.enc -o vault/index;
+
+for f in $(find vault/ -type f -name '*.enc' ! -name 'index.enc'); do
+  base=${f/vault\//""};
+  index=$(cat vault/index);
+  hash=${base/.enc/""};
+  filename=$(cat vault/index | grep $hash | cut -f2 -d ' ');
+
+  keybase pgp decrypt -i $f -o private/$filename;
+done
+rm vault/index;

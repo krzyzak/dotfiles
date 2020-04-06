@@ -1,0 +1,7 @@
+# Ignore not-encrypted files
+vault/**/*
+!vault/**/
+!vault/**/*.enc
+
+# Ignore private section
+private
