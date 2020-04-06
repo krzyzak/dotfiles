@@ -9,6 +9,7 @@ nvm
 playerctl
 rsync
 speedtest-cli
+stow
 thunar-archive-plugin
 ttf-dejavu
 ttf-droid
