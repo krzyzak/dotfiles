@@ -95,6 +95,8 @@ source /home/krzyzak/.yvm/yvm.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias icat="kitty +kitten icat"
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
 
 if [ -f .zshrc-private ]; then
   source .zshrc-private
