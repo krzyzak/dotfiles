@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <value type="int" value="2"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=6;x=0;y=0"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="uint" value="32"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+        <value type="int" value="16"/>
+        <value type="int" value="36"/>
+        <value type="int" value="25"/>
+        <value type="int" value="2"/>
+      </property>
+      <property name="disable-struts" type="bool" value="false"/>
+      <property name="nrows" type="uint" value="1"/>
+      <property name="background-style" type="uint" value="0"/>
+      <property name="background-color" type="array">
+        <value type="uint" value="0"/>
+        <value type="uint" value="0"/>
+        <value type="uint" value="0"/>
+        <value type="uint" value="65535"/>
+      </property>
+      <property name="background-image" type="string" value="/home/krzyzak/2018-08-08-094706_605x83_scrot.png"/>
+      <property name="background-alpha" type="uint" value="0"/>
+    </property>
+    <property name="panel-2" type="empty">
+      <property name="position" type="string" value="p=10;x=0;y=0"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="3"/>
+        <value type="int" value="45"/>
+        <value type="int" value="9"/>
+        <value type="int" value="12"/>
+        <value type="int" value="7"/>
+        <value type="int" value="8"/>
+        <value type="int" value="11"/>
+        <value type="int" value="14"/>
+        <value type="int" value="4"/>
+      </property>
+      <property name="size" type="uint" value="26"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-alpha" type="uint" value="79"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-16" type="string" value="weather"/>
+    <property name="plugin-25" type="string" value="notification-plugin"/>
+    <property name="plugin-36" type="string" value="clock">
+      <property name="digital-format" type="string" value="%d-%m-%Y  %H:%M"/>
+      <property name="tooltip-format" type="string" value="%x"/>
+    </property>
+    <property name="plugin-45" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-1" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-2" type="string" value="actions">
+      <property name="appearance" type="uint" value="0"/>
+      <property name="items" type="array">
+        <value type="string" value="+lock-screen"/>
+        <value type="string" value="-switch-user"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="-suspend"/>
+        <value type="string" value="+hibernate"/>
+        <value type="string" value="-hybrid-sleep"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="+shutdown"/>
+        <value type="string" value="+restart"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="+logout"/>
+        <value type="string" value="-logout-dialog"/>
+      </property>
+      <property name="invert-orientation" type="bool" value="false"/>
+    </property>
+    <property name="plugin-5" type="string" value="xfce4-timer-plugin"/>
+    <property name="plugin-7" type="string" value="netload"/>
+    <property name="plugin-8" type="string" value="xfce4-sensors-plugin"/>
+    <property name="plugin-11" type="string" value="fsguard"/>
+    <property name="plugin-14" type="string" value="systemload"/>
+    <property name="plugin-17" type="string" value="mailwatch"/>
+    <property name="plugin-3" type="string" value="i3-workspaces"/>
+    <property name="plugin-9" type="string" value="genmon"/>
+    <property name="plugin-4" type="string" value="systray">
+      <property name="names-ordered" type="array">
+        <value type="string" value="bluetooth enabled
+&lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="wavebox"/>
+        <value type="string" value="msm notifier"/>
+        <value type="string" value="zeal"/>
+        <value type="string" value="telegramdesktop"/>
+        <value type="string" value="prismatik"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="system-config-printer"/>
+        <value type="string" value="task manager"/>
+        <value type="string" value="zoom"/>
+        <value type="string" value="simplescreenrecorder"/>
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="blueman"/>
+        <value type="string" value="slack"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="pamac-tray"/>
+        <value type="string" value="caffeine"/>
+        <value type="string" value="keybase"/>
+        <value type="string" value="albert"/>
+      </property>
+    </property>
+    <property name="plugin-12" type="string" value="alsa"/>
+  </property>
+</channel>

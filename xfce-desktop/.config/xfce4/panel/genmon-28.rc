@@ -1,0 +1,6 @@
+Command=/home/krzyzak/.config/i3/music_status
+UseLabel=0
+Text=(genmon)
+UpdatePeriod=1000
+Font=SF Pro Text 11
+
