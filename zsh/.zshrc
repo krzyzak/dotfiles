@@ -102,6 +102,9 @@ if [ -f .zshrc-private ]; then
   source .zshrc-private
 fi
 
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
