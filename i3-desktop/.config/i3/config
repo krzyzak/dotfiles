@@ -64,7 +64,7 @@ client.urgent              $transparent         $darkred        $lightgray
 client.background          $transparent
 
 
-for_window [class="^.*"] border pixel 3
+# for_window [class="^.*"] border pixel 3
 hide_edge_borders both
 
 gaps inner 20
@@ -253,11 +253,9 @@ bindsym $mod+r mode "resize"
 
 exec --no-startup-id xfce4-session
 # exec --no-startup-id $HOME/.config/i3/lock.sh
-exec --no-startup-id pulseaudio
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id albert
 exec --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper.jpg
 exec --no-startup-id prismatik -style gtk+
 exec --no-startup-id redshift-gtk
 exec --no-startup-id xbindkeys
-exec_always --no-startup-id "killall -q compton; compton --config ~/.config/i3/compton.conf"
+exec_always --no-startup-id "picom --config ~/.config/i3/compton.conf"
