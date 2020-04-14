@@ -1,34 +1,17 @@
 #!/usr/bin/ruby
-
-if defined?(::Bundler)
-  global_gemset = ENV['GEM_PATH'].split(':').grep(/ruby.*@global/).first
-  if global_gemset
-    all_global_gem_paths = Dir.glob("#{global_gemset}/gems/*")
-    all_global_gem_paths.each do |p|
-      gem_path = "#{p}/lib"
-      $LOAD_PATH << gem_path
-    end
-  end
-end
-
-%w[wirble hirb awesome_print pry-theme].each do |gem|
-  begin
-    require gem
-  rescue LoadError
-  end
-end
+require_relative './.rubyreplrc.rb'
 
 if defined? Hirb
   Hirb::View.enable
-end
+  old_print = Pry.config.print
 
-old_print = Pry.config.print
-Pry.config.print = proc do |*args|
-  Hirb::View.view_or_page_output(args[1]) || old_print.call(*args)
+  Pry.config.print = proc do |*args|
+    Hirb::View.view_or_page_output(args[1]) || old_print.call(*args)
+  end
 end
 
 Pry.config.theme = 'monokai'
-Pry.config.ls.separator = "\n" # new lines between methods
+Pry.config.ls.separator = "\n"
 Pry.config.ls.heading_color = :magenta
 Pry.config.ls.public_method_color = :green
 Pry.config.ls.protected_method_color = :yellow
@@ -56,11 +39,13 @@ def app_name
   File.basename(Dir.pwd)
 end
 
-Pry.prompt = Pry::Prompt.new('krzyzak', 'my prompt',
-  [
-    proc do |obj, _, pry_instance|
-      formatted_app_name = [app_name, formatted_env].compact.map { |part| "[#{part}]" }.join('')
-      sprintf("[%<count>d] %<app_name>s(%<context>s)> ", { count: pry_instance.input_ring.count, app_name: formatted_app_name, context: obj})
-    end
-  ]
-)
+prompt = proc do |obj, _, pry_instance|
+  formatted_app_name = [app_name, formatted_env].compact.map { |part| "[#{part}]" }.join('')
+  sprintf("[%<count>d] %<app_name>s(%<context>s)> ", { count: pry_instance.input_ring.count, app_name: formatted_app_name, context: obj})
+end
+
+if Gem::Version.new(Pry::VERSION) >= Gem::Version.new('0.13')
+  Pry.prompt = Pry::Prompt.new('krzyzak', 'my prompt', [prompt])
+else
+  Pry.config.prompt = prompt
+end
