@@ -1,0 +1,34 @@
+\set QUIET yes
+
+-- Enable timing
+\timing
+
+-- Set prompt
+SELECT version / 10000 || '.' || (version / 100) % 100 || '.' || version % 100 AS pg_version FROM (SELECT current_setting('server_version_num')::int AS version) v \gset
+
+\set PROMPT1 '%[%033[1;90m%][%[%033[1;34m%]%n@%M%[%033[1;90m%]/%[%033[1;33m%]%/%[%033[1;90m%]][%[%033[1;36m%]%:pg_version:%[%033[1;90m%]]%[%033[1;31m%]➤ %[%033[0m%]'
+\set PROMPT2 '%[%033[1;33m%]%R%#%[%033[0m%] '
+
+-- Set null character
+\pset null ␀ 
+
+\set COMP_KEYWORD_CASE upper
+
+-- Set editor
+\setenv PSQL_EDITOR 'code --wait'
+
+-- Customize line style
+\pset linestyle unicode
+\pset border 2
+
+-- Set unlimited, per-db history
+\set HISTFILE ~/.psql_history/:DBNAME
+\set HISTSIZE -1
+\set HISTCONTROL ignoredups
+
+
+-- Configure pager
+\setenv PAGER less
+\setenv LESS '-iMSx4 -FX'
+
+\unset QUIET
