@@ -152,9 +152,9 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 1+ #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 1- #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle  # mute sound
 
 # Lock screen
 bindsym ctrl+Escape exec $HOME/.config/i3/locknow
@@ -199,8 +199,6 @@ bindsym $mod+r mode "resize"
 # }
 exec --no-startup-id xfce4-session
 exec --no-startup-id $HOME/.config/i3/lock.sh
-exec --no-startup-id pulseaudio
-exec --no-startup-id dunst
 exec --no-startup-id albert
-exec_always --no-startup-id "killall -q compton; compton --config ~/.config/i3/compton.conf"
 exec --no-startup-id feh --bg-fill ~/.config/wallpaper.jpg
+exec_always --no-startup-id "picom --config ~/.config/i3/compton.conf"
