@@ -50,3 +50,11 @@ evince
 xfce4-notifyd
 xfce4-screenshooter
 xfce4-clipman-plugin
+xvidcore
+libmpeg2
+x264
+x265
+audacity
+youtube-dl
+texlive-most
+libav
