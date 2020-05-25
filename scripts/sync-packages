@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+# Update existing packages update system
+sudo pacman -Syyu
+yay -Syyu
+
+# Install new
+sudo pacman -S --needed $(cat Pacmanfile)
+
+yay -S --needed $(cat Aurfile)
+
+pacmanfile="Pacmanfile."`hostname`
+aurfile="Aurfile."`hostname`
+
+if [ -f $pacmanfile ]; then
+  sudo pacman -S --needed $(cat $pacmanfile)
+fi
+
+if [ -f $aurfile ]; then
+  yay -S --needed $(cat $aurfile)
+fi
