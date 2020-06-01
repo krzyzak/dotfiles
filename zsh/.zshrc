@@ -94,9 +94,11 @@ source /home/krzyzak/.yvm/yvm.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias icat="kitty +kitten icat"
+alias img="kitty +kitten icat"
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+alias kitty-diff="kitty +kitten diff"
+alias be="bundle exec"
 
 if [ -f .zshrc-private ]; then
   source .zshrc-private
@@ -112,3 +114,5 @@ source /usr/share/nvm/init-nvm.sh
 
 export YVM_DIR=/home/krzyzak/.yvm
 [ -r $YVM_DIR/yvm.sh ] && source $YVM_DIR/yvm.sh
+
+[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
