@@ -17,6 +17,7 @@
 [diff]
     tool = kitty
     guitool = kitty.gui
+    algorithm = patience
 [difftool]
     prompt = false
     trustExitCode = true
