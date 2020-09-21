@@ -28,3 +28,4 @@ direnv
 hstr
 1password
 sops
+heroku-cli
