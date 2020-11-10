@@ -29,3 +29,5 @@ hstr
 1password
 sops
 heroku-cli
+trezor-bridge-bin
+iperf3
