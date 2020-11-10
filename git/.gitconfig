@@ -4,6 +4,7 @@
 	autosquash = true
 [core]
 	editor = code --wait
+	attributesfile = /home/krzyzak/.gitattributes
 [push]
 	default = simple
 [alias]
@@ -12,8 +13,8 @@
 	ci = commit
 	st = status
 [user]
-	name = Michal Krzyzanowski
-	email = michal.krzyzanowski@gmail.com
+	name = Michał Krzyżanowski
+	email = michal.krzyzanowski+github@gmail.com
 [diff]
     tool = kitty
     guitool = kitty.gui
