@@ -116,3 +116,7 @@ export YVM_DIR=/home/krzyzak/.yvm
 [ -r $YVM_DIR/yvm.sh ] && source $YVM_DIR/yvm.sh
 
 [ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
+
+eval "$(op completion zsh)"; compdef _op op
+
+eval "$(direnv hook zsh)"
