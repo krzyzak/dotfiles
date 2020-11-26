@@ -27,6 +27,7 @@ tela-icon-theme
 direnv
 hstr
 1password
+1password-cli
 sops
 heroku-cli
 trezor-bridge-bin
