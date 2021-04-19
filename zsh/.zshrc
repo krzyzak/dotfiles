@@ -65,7 +65,7 @@ TERMINAL="kitty"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z nvm ssh-agent)
+plugins=(git z nvm fzf-tab ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 source /home/krzyzak/.yvm/yvm.sh
@@ -113,6 +113,7 @@ export NVM_DIR="$HOME/.nvm"
 source /usr/share/nvm/init-nvm.sh
 
 export YVM_DIR=/home/krzyzak/.yvm
+export TZ_LIST="Europe/Warsaw,Asia/Bangkok,America/New_York"
 [ -r $YVM_DIR/yvm.sh ] && source $YVM_DIR/yvm.sh
 
 [ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
