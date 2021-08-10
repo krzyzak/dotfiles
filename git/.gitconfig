@@ -15,16 +15,22 @@
 [user]
 	name = Michał Krzyżanowski
 	email = michal.krzyzanowski+github@gmail.com
-[diff]
-    tool = kitty
-    guitool = kitty.gui
-    algorithm = patience
-[difftool]
-    prompt = false
-    trustExitCode = true
-[difftool "kitty"]
-    cmd = kitty +kitten diff $LOCAL $REMOTE
-[difftool "kitty.gui"]
-    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
-[diff "sopsdiffer"]
-	textconv = sops -d
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+    side-by-side = true
+[interactive]
+    diffFilter = delta --color-only
+[includeIf "gitdir:~/projects/toptal/"]
+  path = ~/projects/toptal/.gitconfig
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
