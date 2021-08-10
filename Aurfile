@@ -4,7 +4,7 @@ google-cloud-sdk
 pgtap-git
 slack-desktop
 spotify
-ttf-jetbrains-mono-git
+nerd-fonts-jetbrains-mono
 noto-fonts
 noto-fonts-emoji
 xfce4-datetime-plugin
@@ -32,3 +32,4 @@ sops
 heroku-cli
 trezor-bridge-bin
 iperf3
+steam-fonts

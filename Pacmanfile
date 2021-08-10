@@ -1,4 +1,3 @@
-albert
 aws-cli
 cheese
 code
@@ -56,7 +55,6 @@ x264
 x265
 audacity
 youtube-dl
-texlive-most
 bashtop
 jq
 hq
@@ -74,7 +72,6 @@ file-roller
 asciinema
 mediainfo
 discord
-zeal
 keybase-gui
 the_silver_searcher
 perl-image-exiftool
@@ -86,3 +83,10 @@ xarchiver
 librecad
 github-cli
 croc
+pam-u2f
+libfido2
+bpytop
+nm-connection-editor
+gnome-disk-utility
+network-manager-applet
+signal-desktop
