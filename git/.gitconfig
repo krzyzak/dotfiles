@@ -14,7 +14,7 @@
 	st = status
 [user]
 	name = Michał Krzyżanowski
-	email = michal.krzyzanowski+github@gmail.com
+	email = krzyzak@users.noreply.github.com
 [pager]
     diff = delta
     log = delta
@@ -22,9 +22,15 @@
     show = delta
 
 [delta]
+    file-decoration-style = none
+    file-style = omit
+    hunk-header-decoration-style = "#00b494" box ul
+    hunk-header-file-style = "#999999"
+    hunk-header-line-number-style = bold "#03a4ff"
+    hunk-header-style = file line-number syntax
     plus-style = "syntax #012800"
     minus-style = "syntax #340001"
-    syntax-theme = Monokai Extended
+    syntax-theme = OneHalfDark
     navigate = true
     side-by-side = true
 [interactive]
@@ -32,5 +38,12 @@
 [includeIf "gitdir:~/projects/toptal/"]
   path = ~/projects/toptal/.gitconfig
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[init]
+	defaultBranch = master
