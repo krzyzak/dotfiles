@@ -2,14 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/krzyzak/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
-TERMINAL="kitty"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -65,10 +64,9 @@ TERMINAL="kitty"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z nvm fzf-tab ssh-agent)
+plugins=(git z nvm ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
-source /home/krzyzak/.yvm/yvm.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -94,30 +92,35 @@ source /home/krzyzak/.yvm/yvm.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias img="kitty +kitten icat"
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
-alias kitty-diff="kitty +kitten diff"
 alias be="bundle exec"
 
 if [ -f .zshrc-private ]; then
   source .zshrc-private
 fi
 
-source /usr/share/chruby/chruby.sh
-source /usr/share/chruby/auto.sh
+case "$(uname -s)" in
+  Darwin)
+    source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+    source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+
+    alias a="arch -x86_64"
+    alias ibrew="arch -x86_64 brew"
+  ;;
+  Linux)
+    source /usr/share/chruby/auto.sh
+    alias img="kitty +kitten icat"
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+    alias kitty-diff="kitty +kitten diff"
+  ;;
+esac
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source /usr/share/nvm/init-nvm.sh
-
-export YVM_DIR=/home/krzyzak/.yvm
-export TZ_LIST="Europe/Warsaw,Asia/Bangkok,America/New_York"
-[ -r $YVM_DIR/yvm.sh ] && source $YVM_DIR/yvm.sh
-
-[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
-
-eval "$(op completion zsh)"; compdef _op op
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 eval "$(direnv hook zsh)"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
+export PATH="/opt/homebrew/opt/elasticsearch@6/bin:$PATH"
