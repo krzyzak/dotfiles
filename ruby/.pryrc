@@ -1,15 +1,6 @@
 #!/usr/bin/ruby
 require_relative './.rubyreplrc.rb'
 
-if defined? Hirb
-  Hirb::View.enable
-  old_print = Pry.config.print
-
-  Pry.config.print = proc do |*args|
-    Hirb::View.view_or_page_output(args[1]) || old_print.call(*args)
-  end
-end
-
 Pry.config.theme = 'monokai'
 Pry.config.ls.separator = "\n"
 Pry.config.ls.heading_color = :magenta
