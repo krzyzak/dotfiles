@@ -36,11 +36,6 @@
     side-by-side = true
 [interactive]
     diffFilter = delta --color-only
-[includeIf "gitdir:~/projects/toptal/"]
-  path = ~/projects/toptal/.gitconfig
-[credential "https://github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
