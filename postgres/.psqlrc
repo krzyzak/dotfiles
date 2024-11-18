@@ -1,8 +1,5 @@
 \set QUIET yes
 
--- Enable timing
-\timing
-
 -- Set prompt
 SELECT version / 10000 || '.' || (version / 100) % 100 || '.' || version % 100 AS pg_version FROM (SELECT current_setting('server_version_num')::int AS version) v \gset
 
@@ -10,7 +7,7 @@ SELECT version / 10000 || '.' || (version / 100) % 100 || '.' || version % 100 A
 \set PROMPT2 '%[%033[1;33m%]%R%#%[%033[0m%] '
 
 -- Set null character
-\pset null ␀ 
+\pset null ␀
 
 \set COMP_KEYWORD_CASE upper
 
