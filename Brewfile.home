@@ -2,3 +2,7 @@ cask "todoist"
 cask "messenger"
 cask "whatsapp"
 cask "spotify"
+cask "aerospace"
+cask "xbar"
+
+brew "tailscale"
