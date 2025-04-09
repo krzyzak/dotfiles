@@ -15,6 +15,7 @@ cask "dash@6"
 cask "1password"
 cask "1password-cli"
 cask "docker"
+cask "raycast"
 
 brew "the_silver_searcher"
 brew "asciinema"
