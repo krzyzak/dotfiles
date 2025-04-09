@@ -3,6 +3,12 @@
 echo "Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "Installing apps..."
+say "Homebrew installed"
 
+echo "Installing minimal bundle..."
+brew bundle --file Brewfile.min
+say "Minimal bundle installed"
+
+echo "Installing full bundle..."
 brew bundle
+say "Done"
